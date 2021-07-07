@@ -1,0 +1,48 @@
+<h2>HERE ARE THE RESULTS:</h2>
+<table>
+  <tr>
+    <td>Input Principal: </td>
+    <td>Ksh {{result.inputPrincipal}}</td>
+  </tr>
+  <tr>
+      <td>Mpesa Charges:</td>
+      <td>Ksh {{result.mpesaCharges}}</td>
+  </tr>
+  <tr>
+      <td>Company Charges:</td>
+      <td>Ksh {{result.companyCharges}}</td>
+  </tr>
+  <tr>
+      <td>Local Bank Transfer Charges:</td>
+      <td>Ksh {{result.localBankTransferCharges}}</td>
+  </tr>
+  <tr>
+      <td>Offshore Bank to Local Bank:</td>
+      <td>Ksh {{result.intlBankToLocalBankCharges}}</td>
+  </tr>
+  <div *ngIf="isWithRates">
+    <tr>
+        <td>Paypal to External Platforms:</td>
+        <td>$ {{result.paypalToOuterChannelsCharges}}</td>
+    </tr>
+    <tr>
+        <td>Amount To Be Loaded:</td>
+        <td>$ {{result.amountToBeLoaded}}</td>
+    </tr>
+    <tr>
+        <td colspan="2">*based on the following exchange rate:</td>
+        <td colspan="2">1$ = Ksh {{result.exchangeRate}}</td>
+    </tr>
+  </div>
+  <div *ngIf="!isWithRates">
+    <tr>
+        <td>Paypal to External Platforms:</td>
+        <td>Ksh {{result.paypalToOuterChannelsCharges}}</td>
+    </tr>
+    <tr>
+        <td>Amount To Be Loaded:</td>
+        <td>Ksh {{result.amountToBeLoaded}}</td>
+    </tr>
+  </div>
+</table>
+
